@@ -21,7 +21,7 @@ const questions = [
   {
     type: 'input',
     name: 'description',
-    message: 'Provide a description of the project',
+    message: 'Provide a description of the project:',
     validate: input => {
       if (input) {
         return true;
@@ -34,7 +34,7 @@ const questions = [
   {
     type: 'input',
     name: 'installation',
-    message: 'Please enter installation instructions',
+    message: 'Please enter installation instructions:',
     validate: input => {
       if (input) {
         return true;
@@ -47,7 +47,7 @@ const questions = [
   {
     type: 'input',
     name: 'usage',
-    message: 'Please enter usage information',
+    message: 'Please enter usage information:',
     validate: input => {
       if (input) {
         return true;
@@ -66,7 +66,7 @@ const questions = [
   {
     type: 'input',
     name: 'contributing',
-    message: 'Please enter guidelines for contributing to this project',
+    message: 'Please enter guidelines for contributing to this project:',
     validate: input => {
       if (input) {
         return true;
@@ -79,7 +79,7 @@ const questions = [
   {
     type: 'input',
     name: 'tests',
-    message: 'Please enter test instructions for this project',
+    message: 'Please enter test instructions for this project:',
     validate: input => {
       if (input) {
         return true;
@@ -127,7 +127,7 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
-  fs.writeFile(fileName, generateMarkdown(data), err => { if (err) throw err; console.log('readme.md created successfully!') });
+  fs.writeFile(fileName, generateMarkdown(data), err => { if (err) throw err; console.log('Your new README.md was created successfully!') });
 }
 
 // function to initialize program
@@ -143,7 +143,7 @@ function init() {
       } else if (answers.license === 'ISC') {
         answers.badge = badges[3]
       }
-      writeToFile('./readme.md', answers)
+      writeToFile('./README.md', answers)
     });
 }
 
